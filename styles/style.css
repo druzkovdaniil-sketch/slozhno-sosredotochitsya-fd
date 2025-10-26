@@ -32,17 +32,21 @@
   padding: 10px; /* временно */
   /* padding: var(--padding) ;  */
   font-family: "IBM Plex Mono", sans-serif;
+
+  color: var(--text-color);
 }
 
 .header {
   height: 100vh;
-  min-height: 768px;
+  /* min-height: 768px; */
   display: grid;
   justify-self:auto;
   align-self:auto;
   /* width: 355px; */
-
+  position: relative;
+  grid-template-rows: 1fr auto 1fr;
 }
+
 
 h5 {
   justify-self: self-end;
@@ -50,57 +54,66 @@ h5 {
 }
 
 .header__theme-menu {
-  color:#FF0070;
-  justify-self: self-end;
+  display: grid;
+ color: var(--text-color2);
+  justify-self: last baseline;
+  align-items: center;
+
+
 }
 
 .header__theme-menu-button {
   background: transparent;
-  border: 1px solid transparent;
-  color: #FF0070;
+ color: var(--accent-color);
+ border: 2px solid transparent;
   padding: 5px 13px;
   cursor: pointer;
   font-family: inherit;
   font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: lowercase;
+  max-height: 26px;
 }
 
 .header__theme-menu-button_active {
-  border-color: currentColor;
+  /* border-color: currentColor; */
+ border-color: var(--accent-color);
   
   pointer-events: none; /* Делаем неактивной  */
 }
 
 .header__theme-menu-button:hover {
-  border-color: currentColor;                              /* важно чтобы только грница преобретала opacity */
-  /* opacity: 0.5 ; */
-  
+  /* /* border-color: rgba(255, 0, 112, 0.5); */
+ border-color: var(--button-hover-color); 
 }
 
 .header__theme-menu-button:focus {
   outline: none;
-  border-bottom-color: currentColor;
+  /* border-bottom-color: currentColor; */
+ border-bottom-color: var(--accent-color);
 }
 
 .no-focus {
   align-self: center;
-  height: 192px;
   font-weight: 700;
   font-style: bold;
   font-size: 116px;
+  max-height: 192px;
   opacity: 1;
-  color: #DB00FF;
-  text-shadow: 4px 4px 0 #FF0070;;  
+ color: var(--title-color);
+ text-shadow: 4px 4px 0 var(--shadow-color);  
   line-height: 83%;
   justify-self: first baseline;
-
 }
 
 .what-do {
-  background-color: #FF0070;
-  color: #000;
+ background-color: var(--card-bg-color);
+ color: var(--text-color2);
   font-size: 18px;
   font-weight: 700;
-  align-self: last baseline;
+  align-self: center;
   justify-self: last baseline;
   /* padding: 10px;                                               будто бы лишнее, мешает фону                                             */
   display: inline-block;
@@ -123,19 +136,20 @@ h5 {
 }
 
 .section__title {
-  color: #FF0070;
+ color: var(--accent-color);
   font-size: 18px;
   font-weight: 700;
   
 }
 
 h4 {
-  background-color: #FF0070;
-  color: #000;
+ background-color: var(--card-bg-color);
+ color: var(--text-color2);
   font-size: 18px;
   font-weight: 400;
   display: inline-block;
-  max-width: 649px;
+  width: 100%;
+  /* max-width: 649px; */
   justify-self: last baseline;
   margin: 0;
 }
@@ -143,34 +157,36 @@ h4 {
 .card {
   display: grid;
   /* gap: 10px; */
+
 }
 
 .card__title {
-  background-color: #FF0070;
-  color: #000;
+ background-color: var(--card-bg-color);
+ color: var(--text-color2);
   font-size: 18px;
   font-weight: 700;
   /* padding: 0px 10px; */
-  margin: 0 0 10px 0;
+  margin: 0;
   display: inline-block;
   width: 100%;
-  max-width: 649px;
 }
 
 .card__text {
-  color: #F1B2CE;
+color: var(--text-color);
+opacity: var(--card-opacity);
+  /* color: rgba(241, 178, 206, 0.6); */
   font-size: 18px;
   line-height: 1.3;
-  margin: 0;
-  max-width: 649px;
+  margin: 10px 0 0 0;
+
 }
 
 .section__subtitle {
-  background-color: #FF0070;
-  color: #000;
+ background-color: var(--card-bg-color);
+ color: var(--text-color2);
   font-size: 18px;
   font-weight: 700;
-  /* padding: 0px 10px; */
+
 }
 
 /* Галерея изображений */
@@ -194,13 +210,17 @@ h4 {
   place-items: center;
   height: 100vh;
   min-height: 768px;
+  position: relative;
+  top: 10px;
+  margin: 40px 0 0 0;
 }
+
 
 .footer__title {
   font-weight: 700;
   font-size: 116px;
-  color: #DB00FF;
-  text-shadow: 2px 2px 0 #FF0070;
+ color: var(--title-color);
+ text-shadow: 2px 2px 0 var(--shadow-color);
   
 }
 
@@ -211,22 +231,65 @@ h4 {
   position: absolute;
   width: 25px;
   height: 25px;
-  border: 1px solid #FF0070;
+  border: 1px solid var(--decor-color);
 }
 
 .decorated-zone::before {
-  top: 10px;
-  right: 10px;
+  top: 0px;
+  right: 0px;
   border-left: none;
   border-bottom: none;
 }
 
 .decorated-zone::after {
-  bottom: 10px;
-  left: 10px;
+  bottom: 0px;
+  left: 0px;
   border-right: none;
   border-top: none;
 }
+
+.header__rec {
+  position: absolute;
+  top: 2px;
+  right: 8px;
+ color: var(--accent-color);
+  display: flex;
+  align-items: center;
+  gap: 10px; 
+}
+
+.header__rec::after {
+  content: "";
+  display: inline-block;
+  width: 9px;  /* размер точки */
+  height: 9px;
+  border-radius: 50%;
+
+ background-color: var(--accent-color);
+ box-shadow: 0 0 4px 2px var(--accent-color);
+}
+
+/* Базовое состояние - меняем цвет */
+.link {
+ color: var(--text-color);
+  /* color: rgba(241, 178, 206, 0.6); Новый цвет в спокойном состоянии */
+  text-decoration: none; /* Без подчеркивания */
+ text-shadow: 2.5px 1px 0 var(--shadow-color);
+}
+
+/* Hover - появляется нижнее подчеркивание */
+.link:hover {
+  color: currentColor; /* Цвет сохраняется */
+  border-bottom: 1px solid;
+  /* background-color: var(--accent-color); */
+}
+
+/* Focus - рамка того же цвета */
+.link:focus {
+  outline: 1px solid var(--accent-color); 
+  outline-offset: 1px;  
+}
+
 
 
 
@@ -241,6 +304,17 @@ h4 {
     min-height: 1024px;
   }
   
+.what-do {
+  align-self: center;
+  justify-self: last baseline;
+}
+
+/* .decorated-zone::before,
+.decorated-zone::after {
+  margin: 0;
+  padding: 20px;
+} */
+
   .no-focus,
   .footer__title {
     font-size: 120px;
@@ -250,6 +324,9 @@ h4 {
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
   }
+  .section {
+    margin:40px 0 0 0;
+  }
   .section-why {
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -258,6 +335,7 @@ h4 {
     "section__title card2";
   gap: 20px;
   align-items: start;
+  margin: 60px 0 0 0;
 }
 .section__title {
   grid-area: section__title;
@@ -274,6 +352,62 @@ h4 {
   "card4"
   "card5";
   gap: 20px;
+  width: 100%;
+
+}
+
+.section-tips {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-areas: 
+    "section-title card-title"
+    "section-title card1"
+    "section-title card2"
+    "section-title card3"
+    "section-title card4"
+    "section-title card5";
+  gap: 20px;
+  align-items: start;
+}
+
+.section-tips .section__title {
+  grid-area: section-title;
+}
+
+.section-tips .card__title:first-of-type {
+  grid-area: card-title;
+}
+
+.section-tips .card:nth-of-type(1) { grid-area: card1; }
+.section-tips .card:nth-of-type(2) { grid-area: card2; }
+.section-tips .card:nth-of-type(3) { grid-area: card3; }
+.section-tips .card:nth-of-type(4) { grid-area: card4; }
+.section-tips .card:nth-of-type(5) { grid-area: card5; }
+
+.gallery {
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas: 
+      "sunset sunset ice-cream"
+      "tape books ice-cream"
+      "tape street street";
+    gap: 25px;
+  }
+  /* НАЗНАЧЕНИЕ ОБЛАСТЕЙ КАЖДОМУ ИЗОБРАЖЕНИЮ */
+.gallery__item:nth-child(1) { grid-area: sunset; }  /* sunset.png */
+.gallery__item:nth-child(2) { grid-area: ice-cream; } /* ice-cream.png */
+.gallery__item:nth-child(3) { grid-area: tape; }    /* tape.png */
+.gallery__item:nth-child(4) { grid-area: books; }   /* books.png */
+.gallery__item:nth-child(5) { grid-area: street; }  /* street.png */
+
+.gallery__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Сохраняет пропорции, обрезая если нужно */
+    display: block;
+}
+.footer {
+    margin:80px 0 0 0;
 }
 }
 
@@ -282,7 +416,27 @@ h4 {
   .page {
     padding: 20px;
   }
-  
+  .section {
+    margin:40px 0 0 0;
+  }
+  .header__theme-menu {
+  justify-self: center;
+  align-self: start;
+  display: grid;
+}
+
+.what-do {
+  align-self: center;
+  justify-self: last baseline;
+}
+
+.header__theme-menu-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  /* grid-template-areas: ; */
+}
+
   .header,
   .footer {
     min-height: 768px;
@@ -298,9 +452,7 @@ h4 {
     display: grid;
     gap: 10px;
   }
-  .gallery {
-    grid-template-columns: repeat(3, 1fr);
-  }
+
   .section-why {
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -308,7 +460,7 @@ h4 {
     "section__title card1"
     "section__title card2";
   gap: 10px;
-  
+  margin:40px 0 0 0;
   align-items: start;
 }
 
@@ -325,30 +477,61 @@ h4 {
   grid-template-areas: 
   "section__title section__title section__title"
   "card3 card4 card5"; 
-}
-}
-  /* grid-auto-flow: row;
-  grid-template-rows: min-content auto;
   
-  align-items: start; Важно для выравнивания
+}
+.section-tips {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-areas: 
+    "section-title card-title"
+    "section-title card1"
+    "section-title card2"
+    "section-title card3"
+    "section-title card4"
+    "section-title card5";
   gap: 20px;
-}
-.section__title {
-  grid-area: section__title;
-  grid-column: 1; Только первая колонка
-  grid-row: 1;
-}
-.card:nth-of-type(1) {
-  grid-column: 1;
-  grid-row: 2;
+  align-items: start;
 }
 
-.card:nth-of-type(2) {
-  grid-column: 2;
-  grid-row: 2;
+.section-tips .section__title {
+  grid-area: section-title;
 }
 
-.card:nth-of-type(3) {
-  grid-column: 3;
-  grid-row: 2;
-} */
+.section-tips .card__title:first-of-type {
+  grid-area: card-title;
+}
+
+.section-tips .card:nth-of-type(1) { grid-area: card1; }
+.section-tips .card:nth-of-type(2) { grid-area: card2; }
+.section-tips .card:nth-of-type(3) { grid-area: card3; }
+.section-tips .card:nth-of-type(4) { grid-area: card4; }
+.section-tips .card:nth-of-type(5) { grid-area: card5; }
+
+.gallery {
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas: 
+      "sunset sunset ice-cream"
+      "tape books ice-cream"
+      "tape street street";
+    gap: 25px;
+  }
+  /* НАЗНАЧЕНИЕ ОБЛАСТЕЙ КАЖДОМУ ИЗОБРАЖЕНИЮ */
+.gallery__item:nth-child(1) { grid-area: sunset; }  /* sunset.png */
+.gallery__item:nth-child(2) { grid-area: ice-cream; } /* ice-cream.png */
+.gallery__item:nth-child(3) { grid-area: tape; }    /* tape.png */
+.gallery__item:nth-child(4) { grid-area: books; }   /* books.png */
+.gallery__item:nth-child(5) { grid-area: street; }  /* street.png */
+
+.gallery__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Сохраняет пропорции, обрезая если нужно */
+    display: block;
+}
+.footer {
+    margin:80px 0 0 0;
+}
+}
+
+  
