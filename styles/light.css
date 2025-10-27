@@ -11,30 +11,26 @@
  
 } */
 
-
-
-
-
 :root.theme-light {
   /* Светлая тема */
-   --accent-color: #000;
+  --accent-color: #000;
   --text-color: #000;
   --text-color2: #353430;
-  --bg-color: #FFF1F7;
-  --title-color: #FFC2E6;
-  --shadow-color: #FF8DCB;
+  --bg-color: #fff1f7;
+  --title-color: #ffc2e6;
+  --shadow-color: #ff8dcb;
   --button-hover-color: rgba(53, 52, 48, 0.5);
   --decor-color: #353430;
-  --card-bg-color: #FF8DCB;
+  --card-bg-color: #ff8dcb;
 
   --page-bg-image: url("../images/cover-image-light.png");
-  --page-bg-color: #FFF1F7;
-} 
- 
+  --page-bg-color: #fff1f7;
+}
+
 /* 
 [data-theme="light"] {
   /* Светлая тема */
-  /* --accent-color: #000;
+/* --accent-color: #000;
   --text-color: #000;
   --text-color2: #353430;
   --bg-color: #FFF1F7;
@@ -46,7 +42,7 @@
   --page-bg-image: url("../images/cover-image-light.png");
   --page-bg-color: #FFF1F7; */
 /* } */
-    
+
 /* 
 Остальные стили, только при необходимости
 

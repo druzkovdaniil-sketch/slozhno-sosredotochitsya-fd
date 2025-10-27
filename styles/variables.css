@@ -4,36 +4,34 @@
 */
 /* dark */
 
-
 :root {
   /* Основные цвета для светлой темы */
-   --accent-color: #000;
+  --accent-color: #000;
   --text-color: #000;
   --text-color2: #353430;
-  --bg-color: #FFF1F7;
-  --title-color: #FFC2E6;
-  --shadow-color: #FF8DCB;
+  --bg-color: #fff1f7;
+  --title-color: #ffc2e6;
+  --shadow-color: #ff8dcb;
   --button-hover-color: rgba(53, 52, 48, 0.5);
   --decor-color: #353430;
-  --card-bg-color: #FF8DCB;
+  --card-bg-color: #ff8dcb;
 
   --page-bg-image: url("../images/cover-image-light.png");
-  --page-bg-color: #FFF1F7;
+  --page-bg-color: #fff1f7;
 }
 @media (prefers-color-scheme: dark) {
   :root:not(.theme-light):not(.theme-dark) {
     /* Темная тема для авто-режима */
-    --accent-color: #FF0070;
-    --text-color: #F1B2CE;
+    --accent-color: #ff0070;
+    --text-color: #f1b2ce;
     --text-color2: #000;
     --bg-color: #000028;
-    --title-color: #DB00FF;
-    --shadow-color: #FF0070;
+    --title-color: #db00ff;
+    --shadow-color: #ff0070;
     --button-hover-color: rgba(255, 0, 112, 0.4);
-    --decor-color: #FF0070;
-    --card-bg-color: #FF0070;
+    --decor-color: #ff0070;
+    --card-bg-color: #ff0070;
     --page-bg-image: url("../images/cover-image-dark.png");
     --page-bg-color: #000028;
   }
 }
-
