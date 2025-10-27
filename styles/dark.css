@@ -37,3 +37,12 @@
   --page-bg-image: url("../images/cover-image-dark.png");
   --page-bg-color: #000028;
 } */
+
+[data-theme="light"] .header__rec {
+  display: none;
+}
+
+/* Показываем в темной теме */
+[data-theme="dark"] .header__rec {
+  display: block;
+}
