@@ -26,3 +26,11 @@
   --page-bg-image: url("../images/cover-image-light.png");
   --page-bg-color: #fff1f7;
 }
+
+
+/* Скрываем в auto-режиме при светлой системной теме */
+@media (prefers-color-scheme: light) {
+  .theme-auto .header__rec {
+    display: none;
+  }
+}

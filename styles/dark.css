@@ -22,15 +22,6 @@
   --page-bg-color: #000028;
 }
 
-[data-theme="light"] .header__rec {
-  display: none;
-}
-
-/* Показываем в темной теме */
-[data-theme="dark"] .header__rec {
-  display: block;
-}
-
 @media (prefers-color-scheme: dark) {
   :root {
     /* Темная тема для авто-режима */
@@ -45,5 +36,16 @@
     --card-bg-color: #ff0070;
     --page-bg-image: url("../images/cover-image-dark.png");
     --page-bg-color: #000028;
+  }
+}
+
+.theme-dark .header__rec {
+  display: flex;
+}
+
+/* Для auto-режима */
+@media (prefers-color-scheme: dark) {
+  .theme-auto .header__rec {
+    display: flex;
   }
 }
