@@ -24,6 +24,7 @@
 
 .header {
   height: 100vh;
+  min-height: 668px;
   display: grid;
   justify-self: auto;
   align-self: auto;
@@ -157,10 +158,6 @@ h4 {
   font-weight: 700;
 }
 
-.right-column {
- display: grid;
- gap: 20px;
-}
 /* Галерея изображений */
 .gallery {
   display: grid;
@@ -186,7 +183,8 @@ h4 {
   place-items: center;
   height: 100vh;
   position: relative;
-  margin: 40px 0 0 0;
+  /* margin: 50px 0 0 0; */
+  min-height: 668px;
 }
 
 .footer__title {
@@ -194,6 +192,8 @@ h4 {
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   color: var(--title-color);
   text-shadow: 2px 2px 0 var(--shadow-color);
+  justify-self: center;
+  padding-top: 20px;
 }
 
 /* Декоративная рамка */
@@ -214,21 +214,20 @@ h4 {
 }
 
 .decorated-zone::after {
-  bottom: 0px;
+  bottom: 20px;
   left: 0px;
   border-right: none;
   border-top: none;
   position: absolute;
-  bottom: 20px;
-}
-
-.footer.decorated-zone::before {
-  top: 10px; /* опускаем верхний уголок на 10px */
 }
 
 .footer.decorated-zone::after {
-  bottom: 10px; /* опускаем нижний уголок на 10px */
-}
+  bottom: 0px; 
+} 
+
+.footer.decorated-zone::before {
+  top: 20px; 
+} 
 
 /* Базовое состояние - меняем цвет */
 .link {
@@ -271,8 +270,6 @@ h4 {
   box-shadow: 0 0 4px 2px var(--accent-color);
 }
 
-
-
 .header__rec {
   display: none;
 }
@@ -283,9 +280,7 @@ h4 {
     padding: 20px;
   }
 
-  .header,
-  .footer {
-    /* max-height: 984px; */
+  .header {
     padding-bottom: 40px;
   }
 
@@ -306,6 +301,10 @@ h4 {
   .no-focus,
   .footer__title {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+
+  .footer__title {
+    padding-top: 70px;
   }
 
   .gallery {
@@ -402,16 +401,9 @@ h4 {
     object-fit: cover; /* Сохраняет пропорции, обрезая если нужно */
     display: block;
   }
-  .footer {
-    margin: 80px 0 0 0;
-  }
 
   .footer.decorated-zone::before {
-    top: 0px; /* опускаем верхний уголок на 10px */
-  }
-
-  .footer.decorated-zone::after {
-    bottom: 40px; /* опускаем нижний уголок на 10px */
+    top: 50px; 
   }
 }
 
@@ -548,7 +540,12 @@ h4 {
     object-fit: cover; /* Сохраняет пропорции, обрезая если нужно */
     display: block;
   }
-  .footer {
-    margin: 80px 0 0 0;
+
+  .footer__title {
+    padding-top: 65px;
   }
+
+  /* .footer.decorated-zone::after {
+  bottom: 0px; 
+}  */
 }
